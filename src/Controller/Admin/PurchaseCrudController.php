@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Purchase;
+use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
@@ -23,6 +24,5 @@ class PurchaseCrudController extends AbstractCrudController
         yield NumberField::new('quantity')->setLabel('Quantity');
         yield NumberField::new('total_price')->setLabel('Total Price')->setNumDecimals(2);
         yield DateTimeField::new('date')->setLabel('Purchase Date')->setFormat('dd/MM/yyyy HH:mm');
-
     }
 }

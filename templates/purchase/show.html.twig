@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Purchase Details{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Purchase Details</h2>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Store Name</th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Purchase Date</th>
+            </tr>
+            <tr>
+                <td>{{ purchase.storeName }}</td>
+                <td>{{ purchase.productName }}</td>
+                <td>{{ purchase.totalPrice|number_format(2, ',', '.') }} €</td>
+                <td>{{ purchase.quantity }}</td>
+                <td>{{ purchase.totalPrice|number_format(2, ',', '.') }} €</td>
+                <td>{{ purchase.date|date('d/m/Y H:i') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin') }}" class="btn btn-secondary">Back to list</a>
+</div>
+{% endblock %}
